@@ -79,7 +79,7 @@ class SimplePizzaFactory():
         elif self.pizza_type == 'veggie':
             return VeggiePizza()
         else:
-            raise Exception('invalid pizza type')
+            raise Exception(f'no such kind pizza type: {pizza_type}')
 
 
 class PizzaStore():
