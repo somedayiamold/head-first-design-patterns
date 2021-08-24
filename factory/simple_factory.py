@@ -66,17 +66,15 @@ class VeggiePizza(Pizza):
 
 
 class SimplePizzaFactory():
-    def __init__(self, pizza_type: str) -> None:
-        self.pizza_type = pizza_type
-
-    def create_pizza(self) -> Pizza:
-        if self.pizza_type == 'cheese':
+    @staticmethod
+    def create_pizza(pizza_type: str) -> Pizza:
+        if pizza_type == 'cheese':
             return CheesePizza()
-        elif self.pizza_type == 'pepperoni':
+        elif pizza_type == 'pepperoni':
             return PepperoniPizza()
-        elif self.pizza_type == 'clam':
+        elif pizza_type == 'clam':
             return ClamPizza()
-        elif self.pizza_type == 'veggie':
+        elif pizza_type == 'veggie':
             return VeggiePizza()
         else:
             raise Exception(f'no such kind pizza type: {pizza_type}')
@@ -87,8 +85,7 @@ class PizzaStore():
         self.factory = factory
 
     def order_pizza(self, pizza_type: str):
-        pizza_factory = self.factory(pizza_type)
-        pizza = pizza_factory.create_pizza()
+        pizza = self.factory.create_pizza(pizza_type)
         pizza.prepare()
         pizza.bake()
         pizza.cut()
