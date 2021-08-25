@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Pizza():
+class Pizza:
     def __init__(self, name: str, dough: str, sauce: str, toppings: List[str]) -> None:
         self.name = name
         self.dough = dough
@@ -65,7 +65,7 @@ class VeggiePizza(Pizza):
         super(VeggiePizza, self).__init__(name, dough, sauce, toppings)
 
 
-class SimplePizzaFactory():
+class SimplePizzaFactory:
     @staticmethod
     def create_pizza(pizza_type: str) -> Pizza:
         if pizza_type == 'cheese':
@@ -80,7 +80,7 @@ class SimplePizzaFactory():
             raise Exception(f'no such kind pizza type: {pizza_type}')
 
 
-class PizzaStore():
+class PizzaStore:
     def __init__(self, factory) -> None:
         self.factory = factory
 

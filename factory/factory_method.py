@@ -2,7 +2,7 @@ from abc import ABCMeta, abstractmethod
 from typing import List
 
 
-class Pizza():
+class Pizza:
     def __init__(self, name: str, dough: str, sauce: str, toppings: List[str]) -> None:
         self.name = name
         self.dough = dough
@@ -35,7 +35,7 @@ class Pizza():
         return '\n'.join(display)
 
 
-class PizzaStore():
+class PizzaStore:
     __metaclass__ = ABCMeta
 
     @abstractmethod
@@ -164,7 +164,7 @@ class NYPizzaStore(PizzaStore):
             raise Exception(f'no such kind pizza type: {pizza_type}')
 
 
-class DependentPizzaStore():
+class DependentPizzaStore:
     def __init__(self):
         pass
 

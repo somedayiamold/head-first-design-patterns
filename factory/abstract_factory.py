@@ -2,27 +2,27 @@ from abc import ABCMeta, abstractmethod
 from typing import List
 
 
-class Dough():
+class Dough:
     __metaclass__ = ABCMeta
 
 
-class Sauce():
+class Sauce:
     __metaclass__ = ABCMeta
 
 
-class Cheese():
+class Cheese:
     __metaclass__ = ABCMeta
 
 
-class Veggies():
+class Veggies:
     __metaclass__ = ABCMeta
 
 
-class Pepperoni():
+class Pepperoni:
     __metaclass__ = ABCMeta
 
 
-class Clams():
+class Clams:
     __metaclass__ = ABCMeta
 
 
@@ -106,7 +106,7 @@ class FrozenClams(Clams):
         return 'Frozen Clams from Chesapeake Bay'
 
 
-class PizzaIngredientFactory():
+class PizzaIngredientFactory:
     __metaclass__ = ABCMeta
 
     @abstractmethod
@@ -177,7 +177,7 @@ class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
         return FrozenClams()
 
 
-class Pizza():
+class Pizza:
     __metaclass__ = ABCMeta
 
     def __init__(self) -> None:
@@ -280,7 +280,7 @@ class PepperoniPizza(Pizza):
         self.pepperoni = self.ingredient_factory.create_pepperoni()
 
 
-class PizzaStore():
+class PizzaStore:
     __metaclass__ = ABCMeta
 
     @abstractmethod
