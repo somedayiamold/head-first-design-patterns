@@ -56,8 +56,8 @@ class Duck:
     __metaclass__ = ABCMeta
 
     def __init__(self) -> None:
-        self.fly_behavior: FlyBehavior = None
-        self.quack_behavior: QuackBehavior = None
+        self.fly_behavior: FlyBehavior
+        self.quack_behavior: QuackBehavior
 
     def set_fly_behavior(self, fb: FlyBehavior) -> None:
         self.fly_behavior = fb
