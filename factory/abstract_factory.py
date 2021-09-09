@@ -2,28 +2,28 @@ from abc import ABCMeta, abstractmethod
 from typing import List
 
 
-class Dough:
-    __metaclass__ = ABCMeta
+class Dough(metaclass=ABCMeta):
+    pass
 
 
-class Sauce:
-    __metaclass__ = ABCMeta
+class Sauce(metaclass=ABCMeta):
+    pass
 
 
-class Cheese:
-    __metaclass__ = ABCMeta
+class Cheese(metaclass=ABCMeta):
+    pass
 
 
-class Veggies:
-    __metaclass__ = ABCMeta
+class Veggies(metaclass=ABCMeta):
+    pass
 
 
-class Pepperoni:
-    __metaclass__ = ABCMeta
+class Pepperoni(metaclass=ABCMeta):
+    pass
 
 
-class Clams:
-    __metaclass__ = ABCMeta
+class Clams(metaclass=ABCMeta):
+    pass
 
 
 class ThinCrustDough(Dough):
@@ -106,9 +106,7 @@ class FrozenClams(Clams):
         return 'Frozen Clams from Chesapeake Bay'
 
 
-class PizzaIngredientFactory:
-    __metaclass__ = ABCMeta
-
+class PizzaIngredientFactory(metaclass=ABCMeta):
     @abstractmethod
     def create_dough(self) -> Dough:
         raise NotImplementedError('create_dough method not implemented')
@@ -177,9 +175,7 @@ class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
         return FrozenClams()
 
 
-class Pizza:
-    __metaclass__ = ABCMeta
-
+class Pizza(metaclass=ABCMeta):
     def __init__(self) -> None:
         self.name = ''
         self.dough = None
@@ -280,9 +276,7 @@ class PepperoniPizza(Pizza):
         self.pepperoni = self.ingredient_factory.create_pepperoni()
 
 
-class PizzaStore:
-    __metaclass__ = ABCMeta
-
+class PizzaStore(metaclass=ABCMeta):
     @abstractmethod
     def create_pizza(self, item: str) -> Pizza:
         raise NotImplementedError('create_pizza method not implemented')

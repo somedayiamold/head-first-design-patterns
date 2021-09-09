@@ -2,17 +2,13 @@ from abc import ABCMeta, abstractmethod
 from typing import List
 
 
-class Observer:
-    __metaclass__ = ABCMeta
-
+class Observer(metaclass=ABCMeta):
     @abstractmethod
     def update(self, value: int) -> None:
         raise NotImplementedError('`update` method not implemented')
 
 
-class Subject:
-    __metaclass__ = ABCMeta
-
+class Subject(metaclass=ABCMeta):
     @abstractmethod
     def register_observer(self, o: Observer) -> None:
         raise NotImplementedError('`register_observer` method not implemented')

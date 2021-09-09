@@ -1,17 +1,13 @@
 from abc import ABCMeta, abstractmethod
 
 
-class QuackBehavior:
-    __metaclass__ = ABCMeta
-
+class QuackBehavior(metaclass=ABCMeta):
     @abstractmethod
     def quack(self) -> None:
         raise NotImplementedError('quack method not implemented')
 
 
-class FlyBehavior:
-    __metaclass__ = ABCMeta
-
+class FlyBehavior(metaclass=ABCMeta):
     @abstractmethod
     def fly(self) -> None:
         raise NotImplementedError('fly method not implemented')
@@ -52,9 +48,7 @@ class FlyWithWings(FlyBehavior):
         print("I'm flying!!")
 
 
-class Duck:
-    __metaclass__ = ABCMeta
-
+class Duck(metaclass=ABCMeta):
     def __init__(self) -> None:
         self.fly_behavior: FlyBehavior
         self.quack_behavior: QuackBehavior

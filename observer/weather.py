@@ -2,17 +2,13 @@ from abc import ABCMeta, abstractmethod
 from typing import List, Optional
 
 
-class Observer:
-    __metaclass__ = ABCMeta
-
+class Observer(metaclass=ABCMeta):
     @abstractmethod
     def update(self, temp: float, humidity: float, perssure: float) -> None:
         raise NotImplementedError('`update` method not implemented')
 
 
-class Subject:
-    __metaclass__ = ABCMeta
-
+class Subject(metaclass=ABCMeta):
     @abstractmethod
     def register_observer(self, o: Observer) -> None:
         raise NotImplementedError('`register_observer` method not implemented')
@@ -26,9 +22,7 @@ class Subject:
         raise NotImplementedError('`remove_observer` method not implemented')
 
 
-class DisplayElement:
-    __metaclass__ = ABCMeta
-
+class DisplayElement(metaclass=ABCMeta):
     def display(self) -> None:
         raise NotImplementedError('`display` method not implemented')
 

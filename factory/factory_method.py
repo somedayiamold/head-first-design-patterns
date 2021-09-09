@@ -35,9 +35,7 @@ class Pizza:
         return '\n'.join(display)
 
 
-class PizzaStore:
-    __metaclass__ = ABCMeta
-
+class PizzaStore(metaclass=ABCMeta):
     @abstractmethod
     def create_pizza(self, pizza_type: str) -> Pizza:
         raise NotImplementedError('create_pizza method not implemented')
