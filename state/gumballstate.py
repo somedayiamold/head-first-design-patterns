@@ -180,7 +180,7 @@ class GumballMachine:
     def __str__(self) -> str:
         result = []
         result.append("\nMighty Gumball, Inc.")
-        result.append("\nPython-enabled Standing Gumball Model #2004")
+        result.append("\nPython-enabled Standing Gumball Model #2021")
         result.append(f"\nInventory: {self.count} gumball")
         if self.count != 1:
             result.append("s")
